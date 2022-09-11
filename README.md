@@ -1,5 +1,9 @@
 README
+
 My name is Abhishek Vijayakumar Latha and I am from India. In 2015, I graduated with a Btech in Computer Science. Since then, I have worked with data across a variety of industries. My primary industry experience has been in retail and automobiles. I have been working with Data Analysis, Business Intelligence, and Data Science for around 7 years. The goal of my career is to become an expert in the field of Machine Learning and Artificial Intelligence. Football, movies, TV series, and traveling are some of my personal interests. Furthermore, I play football regularly and am a huge Manchester United fan. The Shawshank Redemption, Interstellar, and Seven are some of my favourite movies. Discovering new places and trying new foods fascinated me more than anything else did. Please find below my preferred email id and A number.
+
 Email id – Abhishek.vijayakumar.latha@smu.ca
+
 A# - A00466017
+
 Piyush and I share some common interests. He is from Pune, and we have been corresponding about the study permit process for the past few weeks. Our passion for Machine Learning and Artificial Intelligence and the desire to derive insights from data was one of the main reasons that brought us together. TV series are also of interest to us, especially dramas and thrillers. Breaking bad and Game of thrones are some of our favourite series except for the ending in Game of thrones. We also share similar likes for food especially Indian sweets. MCDA is a course designed to help us advance our careers in data science. I also intend to use it to learn about product development, which is a new subject for me. As compared to me, Piyush has a lot more experience in data science and ML algorithms, and I look forward to learning from him. One of the interesting fun facts about us was that we ended up buying the same laptop and it was a mere coincidence.
