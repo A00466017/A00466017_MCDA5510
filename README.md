@@ -1,7 +1,7 @@
 README
 
 My name is Abhishek Vijayakumar Latha and I am from India. In 2015, I graduated with a Btech in Computer Science. Since then, I have worked with data across a variety of industries. My primary industry experience has been in retail and automobiles. I have been working with Data Analysis, Business Intelligence, and Data Science for around 7 years. The goal of my career is to become an expert in the field of Machine Learning and Artificial Intelligence. Football, movies, TV series, and traveling are some of my personal interests. Furthermore, I play football regularly and am a huge Manchester United fan. The Shawshank Redemption, Interstellar, and Seven are some of my favourite movies. Discovering new places and trying new foods fascinated me more than anything else did. Please find below my preferred email id and A number.
-
+Along with me and Piyush, Shiney has also joined the group. It was inspiring to see Shiney's desire to learn new things. She is also an avid reader and I would like to get her recommendations on new books to start reading.
 Email id – Abhishek.vijayakumar.latha@smu.ca
 
 A# - A00466017
