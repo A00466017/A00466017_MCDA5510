@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "aK9VdCoD8Z5PotZrw7cXxpxggPzKuIyVRTG19C87OoqWSHMfq5zO3MxjhCcL4DSePQrfp1UtYjKlyXsK6Uek9A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\abhiv\\Desktop\\Abhi\\A00466017_MCDA5510\\Assignment1\\Assignment1\\Assignment1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\abhiv\\.nuget\\packages\\csvhelper\\29.0.0\\csvhelper.29.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
