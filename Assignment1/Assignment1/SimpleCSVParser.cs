@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -16,22 +17,25 @@ namespace Assignment1
     {
 
 
-        public static void Main(String[] args)
-        {
-            //SimpleCSVParser parser = new SimpleCSVParser();
-            //parser.parse(@"/Users/abhiv/Desktop/Abhi/A00466017_MCDA5510/Assignment1/Assignment1/CustomerData1.csv");
-            using var streamReader = new StreamReader("../../../CustomerData1.csv");
-            {
-                using var streamWriter = new StreamWriter("../../../finalFile.csv");
-                {
-                    var csvreader = new CsvReader(streamReader, CultureInfo.InvariantCulture);
-                    var csvwriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
-                    var oprecords = csvreader.GetRecords<Customer>();
-                    csvwriter.WriteRecords(oprecords);
-                }
+        //public static void Main(String[] args)
+        //{
+        //    //SimpleCSVParser parser = new SimpleCSVParser();
+        //    //parser.parse(@"/Users/abhiv/Desktop/Abhi/A00466017_MCDA5510/Assignment1/Assignment1/CustomerData1.csv");
+        //    //DirWalker fw = new DirWalker();
 
-            }
-        }
+        //    using var streamReader = new StreamReader("../../../CustomerData1.csv");
+        //    {
+        //        using var streamWriter = new StreamWriter("../../../finalFile.csv");
+        //        {
+        //            var csvreader = new CsvReader(streamReader, CultureInfo.InvariantCulture);
+        //            var csvwriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
+        //            var oprecords = csvreader.GetRecords<Customer>();
+        //            csvwriter.WriteRecords(oprecords);
+        //        }
+
+        //    }
+            
+        //}
 
         public void parse(String fileName)
         {
