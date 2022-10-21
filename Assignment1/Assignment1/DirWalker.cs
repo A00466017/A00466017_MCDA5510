@@ -27,19 +27,19 @@ namespace Assignment1
             }
             string[] fileList = Directory.GetFiles(path);
             foreach (string filepath in fileList)
-            {
-
+            { 
+                var array = filepath.Split(@"\");
                 Console.WriteLine("File:" + filepath);
+                Console.WriteLine("Date :" + array[4] +'-'+ array[5] +'-'+ array[6]);
             }
         }
 
-        public static void Main(string[] args)
-        {
-            DirWalker fw = new DirWalker();
-            //fw.walk(@"Users/abhiv/Desktop/Abhi/MCDA5510_Assignments/Assignment1/Assignment1/Sample Data");
-            fw.walk(@"../../../Sample Data");
+        //public static void main(string[] args)
+        //{
+        //    DirWalker fw = new DirWalker();
+        //    //fw.walk(@"Users/abhiv/Desktop/Abhi/MCDA5510_Assignments/Assignment1/Assignment1/Sample Data");
+        //    fw.walk(@"..\..\..\Sample Data\");
 
-
-        }
+        //}
     }
 }
