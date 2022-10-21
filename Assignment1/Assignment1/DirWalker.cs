@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
@@ -14,14 +16,7 @@ namespace Assignment1
 
         public void walk(String path)
         {
-            //var config = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture);
-            //{
-            //    HasHeaderRecord = true;
-            //    HeaderValidated = null;
-            //    MissingFieldFound = null;
-            //    IgnoreBlankLines = true;
 
-            //};
             string[] list = Directory.GetDirectories(path);
 
 
@@ -36,37 +31,61 @@ namespace Assignment1
                 }
             }
             string[] fileList = Directory.GetFiles(path);
+            int skiprec = 0;
+            List<Customerwrite> records = new List<Customerwrite>();
             foreach (string filepath in fileList)
             { 
-                //var array = filepath.Split(@"\");
+                var array = filepath.Split(@"\");
                 Console.WriteLine("File:" + filepath);
-                //Console.WriteLine("Date :" + array[4] +'-'+ array[5] +'-'+ array[6]);
-                //var oprecords;
+                var date =  array[6]+"/"+array[5]+"/"+array[4];
                 using var streamReader = new StreamReader(filepath);
-
+               
                 {
-                    using var streamWriter = new StreamWriter("../../../finalFile.csv",true);
+                   // using var streamWriter = new StreamWriter("../../../finalFile.csv",true);
+                    
                     {
-                        var config = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture);
-                        var csvreader = new CsvReader(streamReader, config);
-                        
-                        var csvwriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
-                        config.HasHeaderRecord = false;
-                        config.MissingFieldFound = null;
-                        var oprecords = csvreader.GetRecords<dynamic>();
+                        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+                        {
+                            HasHeaderRecord = false,
+                            MissingFieldFound = null
+                        };
+                        using (var csvreader = new CsvReader(streamReader, config))
+                        {
+                            var oprecords = csvreader.GetRecords<Customerread>().Skip(1);
+                            
+                            
+                            foreach (var i in oprecords)
+                            {
+                                if (i.fName!="" && i.lName != "" && i.streetnum != "" && i.street != "" && i.city != "" && i.province != "" && i.postalcode != "" && i.country != "" && i.phonenum != "" && i.email != "")
+                                {
+                                    Customerwrite checkempty=new Customerwrite();
+                                    checkempty.fName = i.fName;
+                                    checkempty.lName = i.lName;
+                                    checkempty.streetnum = i.streetnum;
+                                    checkempty.street = i.street;
+                                    checkempty.city = i.city;
+                                    checkempty.province = i.province;
+                                    checkempty.postalcode = i.postalcode;
+                                    checkempty.country = i.country;
+                                    checkempty.phonenum = i.phonenum;
+                                    checkempty.email = i.email;
+                                    checkempty.Date = date;
+                                    records.Add(checkempty);
+                                }
+                                else { skiprec++; }
+                            }
 
-                        csvwriter.WriteRecords(oprecords);
-                        //foreach (var record in oprecords)
-                        //{
-                        //    record.NewColumn = "New Item";
-                        //}
-                        //using (var csvWriter = new CsvWriter(Console.Out, CultureInfo.InvariantCulture))
-                        //{
-                        //    csvWriter.WriteRecords(oprecords);
-                        //}
+                            
+                        }
+
+                        
+
                     }
                 }
             }
+            using var streamWriter = new StreamWriter("../../../finalFile.csv",true);
+            var csvwriter = new CsvWriter(streamWriter,CultureInfo.InvariantCulture);
+            csvwriter.WriteRecords(records);
         }
 
 
@@ -77,15 +96,17 @@ namespace Assignment1
             fw.walk(@"..\..\..\Sample Data\");
 
         }
+        
     }
-    public class Customer1
+    public class Customerread
     {
         [Name("First Name")]
+        [Index(0)]
         public string fName { get; set; }
         [Name("Last Name")]
         public string lName { get; set; }
         [Name("Street Number")]
-        public int streetnum { get; set; }
+        public string streetnum { get; set; }
         [Name("Street")]
         public string street { get; set; }
         [Name("City")]
@@ -100,5 +121,30 @@ namespace Assignment1
         public string phonenum { get; set; }
         [Name("email Address")]
         public string email { get; set; }
+    }
+    public class Customerwrite
+    {
+        [Name("First Name")]
+        public string fName { get; set; }
+        [Name("Last Name")]
+        public string lName { get; set; }
+        [Name("Street Number")]
+        public string streetnum { get; set; }
+        [Name("Street")]
+        public string street { get; set; }
+        [Name("City")]
+        public string city { get; set; }
+        [Name("Province")]
+        public string province { get; set; }
+        [Name("Postal Code")]
+        public string postalcode { get; set; }
+        [Name("Country")]
+        public string country { get; set; }
+        [Name("Phone Number")]
+        public string phonenum { get; set; }
+        [Name("email Address")]
+        public string email { get; set; }
+        [Name("Date")]
+        public string Date { get; set; }
     }
 }
