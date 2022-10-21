@@ -24,10 +24,10 @@ namespace Assignment1
             {
                 using var streamWriter = new StreamWriter("../../../finalFile.csv");
                 {
-                    var reader = new CsvReader(streamReader, CultureInfo.InvariantCulture);
-                    var writer = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
-                    var oprecords = reader.GetRecords<Customer>();
-                    writer.WriteRecords(oprecords);
+                    var csvreader = new CsvReader(streamReader, CultureInfo.InvariantCulture);
+                    var csvwriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
+                    var oprecords = csvreader.GetRecords<Customer>();
+                    csvwriter.WriteRecords(oprecords);
                 }
 
             }
