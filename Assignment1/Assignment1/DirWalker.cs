@@ -10,18 +10,18 @@ using CsvHelper.Configuration.Attributes;
 namespace Assignment1
 {
 
-
     public class DirWalker
     {
         int skiprec = 0;
+        List<Customerwrite> records = new List<Customerwrite>();
 
-        public void walk(String path)
+        public List<Customerwrite> walk(String path)
         {
 
             string[] list = Directory.GetDirectories(path);
 
 
-            if (list == null) return;
+            if (list == null) return null;
 
             foreach (string dirpath in list)
             {
@@ -35,7 +35,7 @@ namespace Assignment1
             if (fileList != null)
             {
 
-                List<Customerwrite> records = new List<Customerwrite>();
+                /*List<Customerwrite> records = new List<Customerwrite>();*/
 
                 foreach (string filepath in fileList)
                 {
@@ -77,22 +77,27 @@ namespace Assignment1
                         }
 
 
+
                     }
                 }
-
-                using var streamWriter = new StreamWriter("../../../finalFile.csv", true);
-                var csvwriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
-                csvwriter.WriteRecords(records);
-                //Console.WriteLine("Skipped Rows - " + skiprec);
             }
+            return records;
         }
         //Console.WriteLine("Skipped Rows - " + skiprec);
+
+        public void writeInCsv(List<Customerwrite> records)
+        {
+            using var streamWriter = new StreamWriter("../../../finalFile.csv", true);
+            var csvwriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
+            csvwriter.WriteRecords(records);
+        }
 
         public static void Main(string[] args)
         {
             DirWalker fw = new DirWalker();
-            fw.walk(@"..\..\..\Sample Data\");
+            var newRecords = fw.walk(@"..\..\..\Sample Data\");
             Console.WriteLine("Skipped Rows - " + fw.skiprec);
+            fw.writeInCsv(newRecords);
 
         }
 
