@@ -13,6 +13,7 @@ namespace Assignment1
 
     public class DirWalker
     {
+        int skiprec = 0;
 
         public void walk(String path)
         {
@@ -31,72 +32,70 @@ namespace Assignment1
                 }
             }
             string[] fileList = Directory.GetFiles(path);
-            int skiprec = 0;
-            List<Customerwrite> records = new List<Customerwrite>();
-            foreach (string filepath in fileList)
-            { 
-                var array = filepath.Split(@"\");
-                Console.WriteLine("File:" + filepath);
-                var date =  array[6]+"/"+array[5]+"/"+array[4];
-                using var streamReader = new StreamReader(filepath);
-               
-                {
-                   // using var streamWriter = new StreamWriter("../../../finalFile.csv",true);
-                    
-                    {
-                        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
-                        {
-                            HasHeaderRecord = false,
-                            MissingFieldFound = null
-                        };
-                        using (var csvreader = new CsvReader(streamReader, config))
-                        {
-                            var oprecords = csvreader.GetRecords<Customerread>().Skip(1);
-                            
-                            
-                            foreach (var i in oprecords)
-                            {
-                                if (i.fName!="" && i.lName != "" && i.streetnum != "" && i.street != "" && i.city != "" && i.province != "" && i.postalcode != "" && i.country != "" && i.phonenum != "" && i.email != "")
-                                {
-                                    Customerwrite checkempty=new Customerwrite();
-                                    checkempty.fName = i.fName;
-                                    checkempty.lName = i.lName;
-                                    checkempty.streetnum = i.streetnum;
-                                    checkempty.street = i.street;
-                                    checkempty.city = i.city;
-                                    checkempty.province = i.province;
-                                    checkempty.postalcode = i.postalcode;
-                                    checkempty.country = i.country;
-                                    checkempty.phonenum = i.phonenum;
-                                    checkempty.email = i.email;
-                                    checkempty.Date = date;
-                                    records.Add(checkempty);
-                                }
-                                else { skiprec++; }
-                            }
+            if (fileList != null)
+            {
 
-                            
+                List<Customerwrite> records = new List<Customerwrite>();
+
+                foreach (string filepath in fileList)
+                {
+                    var array = filepath.Split(@"\");
+                    Console.WriteLine("File:" + filepath);
+                    string date = array[4] + "/" + array[5] + "/" + array[6];
+                    using var streamReader = new StreamReader(filepath);
+
+
+                    var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+                    {
+                        HasHeaderRecord = false,
+                        MissingFieldFound = null
+                    };
+                    using (var csvreader = new CsvReader(streamReader, config))
+                    {
+                        var oprecords = csvreader.GetRecords<Customerread>().Skip(1);
+
+
+                        foreach (var i in oprecords)
+                        {
+                            if (i.fName != "" && i.lName != "" && i.streetnum != "" && i.street != "" && i.city != "" && i.province != "" && i.postalcode != "" && i.country != "" && i.phonenum != "" && i.email != "")
+                            {
+                                Customerwrite checkempty = new Customerwrite();
+                                checkempty.fName = i.fName;
+                                checkempty.lName = i.lName;
+                                checkempty.streetnum = i.streetnum;
+                                checkempty.street = i.street;
+                                checkempty.city = i.city;
+                                checkempty.province = i.province;
+                                checkempty.postalcode = i.postalcode;
+                                checkempty.country = i.country;
+                                checkempty.phonenum = i.phonenum;
+                                checkempty.email = i.email;
+                                checkempty.Date = date;
+                                records.Add(checkempty);
+                            }
+                            else { skiprec = skiprec + 1; }
                         }
 
-                        
 
                     }
                 }
-            }
-            using var streamWriter = new StreamWriter("../../../finalFile.csv",true);
-            var csvwriter = new CsvWriter(streamWriter,CultureInfo.InvariantCulture);
-            csvwriter.WriteRecords(records);
-        }
 
+                using var streamWriter = new StreamWriter("../../../finalFile.csv", true);
+                var csvwriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
+                csvwriter.WriteRecords(records);
+                //Console.WriteLine("Skipped Rows - " + skiprec);
+            }
+        }
+        //Console.WriteLine("Skipped Rows - " + skiprec);
 
         public static void Main(string[] args)
         {
             DirWalker fw = new DirWalker();
-            //fw.walk(@"Users/abhiv/Desktop/Abhi/MCDA5510_Assignments/Assignment1/Assignment1/Sample Data");
             fw.walk(@"..\..\..\Sample Data\");
+            Console.WriteLine("Skipped Rows - " + fw.skiprec);
 
         }
-        
+
     }
     public class Customerread
     {
