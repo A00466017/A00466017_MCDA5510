@@ -94,10 +94,14 @@ namespace Assignment1
 
         public static void Main(string[] args)
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
             DirWalker fw = new DirWalker();
             var newRecords = fw.walk(@"..\..\..\Sample Data\");
             Console.WriteLine("Skipped Rows - " + fw.skiprec);
             fw.writeInCsv(newRecords);
+            watch.Stop();
+            Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
 
         }
 
