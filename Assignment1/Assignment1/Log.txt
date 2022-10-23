@@ -1,0 +1,7 @@
+--------LOG ENTRY---------
+Code started execution at : 17:55:20
+Code execution time - 38931ms
+Valid Rows - 201075
+Skipped Rows - 81834
+Code stopped execution at : 17:55:59
+------------------------------

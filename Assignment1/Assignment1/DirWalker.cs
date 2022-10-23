@@ -114,15 +114,26 @@ namespace Assignment1
         }
         public static void Main(string[] args)
         {
+            var datnow = DateTime.Now.ToLongTimeString();
             var watch = new System.Diagnostics.Stopwatch();
             watch.Start();
             DirWalker fw = new DirWalker();
             var newRecords = fw.walk(@"..\..\..\Sample Data\");
-            Console.WriteLine("Valid Rows - " + fw.valrec);
-            Console.WriteLine("Skipped Rows - " + fw.skiprec);
             fw.writeInCsv(newRecords);
             watch.Stop();
-            Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
+
+            using (StreamWriter writer = new StreamWriter(@"../../../Log.txt", true))
+            {
+                var endnow = DateTime.Now.ToLongTimeString();
+                writer.WriteLine("--------LOG ENTRY---------");
+                writer.WriteLine("Code started execution at : " + datnow);
+                writer.WriteLine("Code execution time" + " - " + watch.ElapsedMilliseconds + "ms");
+                writer.WriteLine("Valid Rows - " + fw.valrec);
+                writer.WriteLine("Skipped Rows - " + fw.skiprec);
+                writer.WriteLine("Code stopped execution at : " + endnow);
+                writer.WriteLine("------------------------------");
+                writer.Flush();
+            }
 
         }
 
