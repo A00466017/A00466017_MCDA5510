@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
@@ -13,6 +14,7 @@ namespace Assignment1
     public class DirWalker
     {
         int skiprec = 0;
+        int valrec = 0;
         List<Customerwrite> records = new List<Customerwrite>();
 
         public List<Customerwrite> walk(String path)
@@ -72,6 +74,7 @@ namespace Assignment1
                                 checkempty.email = i.email;
                                 checkempty.Date = date;
                                 records.Add(checkempty);
+                                valrec = valrec + 1;
                             }
                             else { skiprec = skiprec + 1; }
                         }
@@ -92,12 +95,30 @@ namespace Assignment1
             csvwriter.WriteRecords(records);
         }
 
+        public static void Log(string logMessage, int value, TextWriter w)
+        {
+            w.Write("\r\nLog Entry : ");
+            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
+            w.WriteLine("  :");
+            w.WriteLine($"  :{logMessage}");
+            w.WriteLine("-------------------------------");
+        }
+
+        public static void DumpLog(StreamReader r)
+        {
+            string line;
+            while ((line = r.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
         public static void Main(string[] args)
         {
             var watch = new System.Diagnostics.Stopwatch();
             watch.Start();
             DirWalker fw = new DirWalker();
             var newRecords = fw.walk(@"..\..\..\Sample Data\");
+            Console.WriteLine("Valid Rows - " + fw.valrec);
             Console.WriteLine("Skipped Rows - " + fw.skiprec);
             fw.writeInCsv(newRecords);
             watch.Stop();
