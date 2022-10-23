@@ -1,0 +1,10 @@
+--------LOG ENTRY---------
+Directory Not found
+------------------------------
+--------LOG ENTRY---------
+Code started execution at : 20:11:50
+Code execution time - 55909ms
+Valid Rows - 201075
+Skipped Rows - 81834
+Code stopped execution at : 20:12:46
+------------------------------

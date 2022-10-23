@@ -1,7 +1,31 @@
 --------LOG ENTRY---------
-Code started execution at : 17:55:20
-Code execution time - 38931ms
+Code started execution at : 18:32:44
+Code execution time - 53ms
+Valid Rows - 0
+Skipped Rows - 0
+Code stopped execution at : 18:32:44
+------------------------------
+--------LOG ENTRY---------
+Code started execution at : 18:33:35
+Code execution time - 54ms
+Valid Rows - 0
+Skipped Rows - 0
+Code stopped execution at : 18:33:35
+------------------------------
+--------LOG ENTRY---------
+Code started execution at : 18:50:30
+Code execution time - 55ms
+Valid Rows - 0
+Skipped Rows - 0
+Code stopped execution at : 18:50:30
+------------------------------
+--------LOG ENTRY---------
+Directory Not found
+------------------------------
+--------LOG ENTRY---------
+Code started execution at : 19:54:17
+Code execution time - 61818ms
 Valid Rows - 201075
 Skipped Rows - 81834
-Code stopped execution at : 17:55:59
+Code stopped execution at : 19:55:19
 ------------------------------
