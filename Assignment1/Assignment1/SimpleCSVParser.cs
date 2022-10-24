@@ -8,6 +8,7 @@ using System.Numerics;
 using CsvHelper;
 using CsvHelper.Configuration.Attributes;
 using Microsoft.VisualBasic.FileIO;
+
 using static System.Net.WebRequestMethods;
 //using Dirwalker;
 
@@ -34,55 +35,58 @@ namespace Assignment1
         //        }
 
         //    }
-            
+
         //}
 
         public void parse(String fileName)
         {
-            try { 
-            using (TextFieldParser parser = new TextFieldParser(fileName))
+            try
             {
-                parser.TextFieldType = FieldType.Delimited;
-                parser.SetDelimiters(", ");
-                    while (!parser.EndOfData)
+                using (TextFieldParser parser = new TextFieldParser(fileName))
                 {
-                    //Process row
-                    string[] fields = parser.ReadFields();
-                    foreach (string field in fields)
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters(", ");
+                    while (!parser.EndOfData)
                     {
-                        Console.WriteLine(field);                      
+                        //Process row
+                        string[] fields = parser.ReadFields();
+                        foreach (string field in fields)
+                        {
+                            Console.WriteLine(field);
+                        }
                     }
                 }
+
             }
-        
-        }catch(IOException ioe){
+            catch (IOException ioe)
+            {
                 Console.WriteLine(ioe.StackTrace);
             }
-            
+
         }
     }
-        public class Customer
-        {
-            [Name("First Name")]
-            public string fName { get; set; }
-            [Name("Last Name")]
-            public string lName { get; set; }
-            [Name("Street Number")]
-            public int streetnum { get; set; }
-            [Name("Street")]
-            public string street { get; set; }
-            [Name("City")]
-            public string city { get; set; }
-            [Name("Province")]
-            public string province { get; set; }
-            [Name("Postal Code")]
-            public string postalcode { get; set; }
-            [Name("Country")]
-            public string country { get; set; }
-            [Name("Phone Number")]
-            public string phonenum { get; set; }
-            [Name("email Address")]
-            public string email { get; set; }
-        }
+    public class Customer
+    {
+        [Name("First Name")]
+        public string fName { get; set; }
+        [Name("Last Name")]
+        public string lName { get; set; }
+        [Name("Street Number")]
+        public int streetnum { get; set; }
+        [Name("Street")]
+        public string street { get; set; }
+        [Name("City")]
+        public string city { get; set; }
+        [Name("Province")]
+        public string province { get; set; }
+        [Name("Postal Code")]
+        public string postalcode { get; set; }
+        [Name("Country")]
+        public string country { get; set; }
+        [Name("Phone Number")]
+        public string phonenum { get; set; }
+        [Name("email Address")]
+        public string email { get; set; }
+    }
 
 }

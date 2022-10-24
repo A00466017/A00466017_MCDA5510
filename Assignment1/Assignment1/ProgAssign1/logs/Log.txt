@@ -8,3 +8,24 @@ Valid Rows - 201075
 Skipped Rows - 81834
 Code stopped execution at : 20:12:46
 ------------------------------
+--------LOG ENTRY---------
+Directory Not found
+------------------------------
+2022-10-23 21:45:47,945 [1] ERROR Assignment1.Final_Csv_Reader [(null)] - Directory Not Found
+2022-10-23 21:48:02,326 [1] ERROR Assignment1.Final_Csv_Reader [(null)] - Directory Not Found
+2022-10-23 22:03:29,574 [1] ERROR Assignment1.Final_Csv_Reader [(null)] - Directory Not Found
+2022-10-23 22:04:23,468 [1] ERROR Assignment1.Final_Csv_Reader [(null)] - Directory Not Found
+2022-10-23 22:05:18,067 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - --------LOG ENTRY---------
+2022-10-23 22:05:18,086 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Code started execution at : 22:04:42
+2022-10-23 22:05:18,087 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Code execution time - 35926ms
+2022-10-23 22:05:18,087 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Valid Rows - 201075
+2022-10-23 22:05:18,087 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Skipped Rows - 81834
+2022-10-23 22:05:18,087 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Code stopped execution at : 22:05:18
+2022-10-23 22:05:18,088 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - ------------------------------
+2022-10-23 22:06:55,614 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - --------LOG ENTRY---------
+2022-10-23 22:06:55,633 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Code started execution at : 22:06:20
+2022-10-23 22:06:55,634 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Code execution time - 34649ms
+2022-10-23 22:06:55,634 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Valid Rows - 201075
+2022-10-23 22:06:55,634 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Skipped Rows - 81834
+2022-10-23 22:06:55,635 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - Code stopped execution at : 22:06:55
+2022-10-23 22:06:55,635 [1] INFO  Assignment1.Final_Csv_Reader [(null)] - ------------------------------

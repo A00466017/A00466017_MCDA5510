@@ -1,10 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "aK9VdCoD8Z5PotZrw7cXxpxggPzKuIyVRTG19C87OoqWSHMfq5zO3MxjhCcL4DSePQrfp1UtYjKlyXsK6Uek9A==",
+  "dgSpecHash": "F3WSyvLVU5cfcocalBbUUpcGfYuLNeXDG5qBFWZX5aJdiDptlGAOU+kiPuo2/U4BEBUqaaAWw6LH5yEuJSpvWw==",
   "success": true,
   "projectFilePath": "C:\\Users\\abhiv\\Desktop\\Abhi\\A00466017_MCDA5510\\Assignment1\\Assignment1\\Assignment1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\abhiv\\.nuget\\packages\\csvhelper\\29.0.0\\csvhelper.29.0.0.nupkg.sha512"
+    "C:\\Users\\abhiv\\.nuget\\packages\\csvhelper\\29.0.0\\csvhelper.29.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\log4net\\2.0.13\\log4net.2.0.13.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.logging.log4net.aspnetcore\\6.1.0\\microsoft.extensions.logging.log4net.aspnetcore.6.1.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\abhiv\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

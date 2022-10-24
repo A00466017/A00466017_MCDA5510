@@ -7,6 +7,7 @@ using System.Reflection;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
+using log4net;
 
 namespace Assignment1
 {
@@ -16,6 +17,8 @@ namespace Assignment1
         int skiprec = 0;
         int valrec = 0;
         List<Customerwrite> records = new List<Customerwrite>();
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
 
         public List<Customerwrite> walk(String path)
         {
@@ -93,32 +96,30 @@ namespace Assignment1
         public static void Main(string[] args)
         {
             var datnow = DateTime.Now.ToLongTimeString();
+            log4net.Config.XmlConfigurator.Configure();
             var watch = new System.Diagnostics.Stopwatch();
             watch.Start();
             Final_Csv_Reader fw = new Final_Csv_Reader();
 
-            using (StreamWriter writer = new StreamWriter(@"..\..\..\ProgAssign1\logs\Log.txt", true))
+
             {
                 try
                 {
                     var newRecords = fw.walk(@"..\..\..\Sample Data\");
                     fw.writeInCsv(newRecords);
                     var endnow = DateTime.Now.ToLongTimeString();
-                    writer.WriteLine("--------LOG ENTRY---------");
-                    writer.WriteLine("Code started execution at : " + datnow);
-                    writer.WriteLine("Code execution time" + " - " + watch.ElapsedMilliseconds + "ms");
-                    writer.WriteLine("Valid Rows - " + fw.valrec);
-                    writer.WriteLine("Skipped Rows - " + fw.skiprec);
-                    writer.WriteLine("Code stopped execution at : " + endnow);
-                    writer.WriteLine("------------------------------");
-                    writer.Flush();
+                    log.Info("--------LOG ENTRY---------");
+                    log.Info("Code started execution at : " + datnow);
+                    log.Info("Code execution time" + " - " + watch.ElapsedMilliseconds + "ms");
+                    log.Info("Valid Rows - " + fw.valrec);
+                    log.Info("Skipped Rows - " + fw.skiprec);
+                    log.Info("Code stopped execution at : " + endnow);
+                    log.Info("------------------------------");
+                    //writer.Flush();
                 }
                 catch (DirectoryNotFoundException)
                 {
-                    writer.WriteLine("--------LOG ENTRY---------");
-                    writer.WriteLine("Directory Not found");
-                    writer.WriteLine("------------------------------");
-                    writer.Flush();
+                    log.Error("Directory Not Found");
                 }
             }
 
