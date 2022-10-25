@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Assignment 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I tried to make the assignment as fun and beneficial as possible... 😅 
 
-## Available Scripts
+You will create a mini personal web app, talking about yourself and your town.
 
-In the project directory, you can run:
+## Requirements
+A React app with **two** views (or pages). You can create it by running the `create-react-app` command, or by using the built-in react project in Visual Studio.
 
-### `npm start`
+### 1st View: "About me"
+- Add your name as the headline
+- Write a paragraph about yourself and another paragraph about why you joined the MCDA program.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2st View: "My Town"
+- Add a picture of your town (could be the city where you currently live or your hometown).
+- Add the town's name (e.g. "I live in Halifax, NS" or "I'm from Beirut, Lebanon") .
+- Add the current weather of that city (see section below).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Navigation
+- Add two `<a>` tags: "About me" and "My Town" (you can any other tag that you can make clickable). 
+- When "About me" is clicked the 1st View is shown
+- When "My Town" is clicked the 2nd View is shown
+- Hint: use state ;) 
 
-### `npm test`
+### Current Weather
+- This is the hardest part of the assignment
+- The goal of this exercise is to fetch data from an API and populate it to the UI
+- You can use an actual Weather API (like [OpenWeatherMap](https://openweathermap.org/api)) OR you can just use the Weather Forcast Controller (`WeatherForecastController.cs`) that comes out of the box when creating a React app on Visual Studio (it generates random numbers but that's okay it works for now).
+- Add a picture next to the temprature text (see `assets/`). The picture should be:     
+    - `cold.png` if the temprature is 10°C or lower
+    - `mild.png` if the temprature is higher than 10°C  but lower than 20°C 
+    - `sunny.png` if the temprature is higher than 20°C 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### BONUS
+Add a button "Change to °F", that if clicked will display the temprature in Fahrenheit and will display "Change to °C" and when clicked again it will display the temprature back in Celsius. 
 
-### `npm run build`
+```
+Formula (from Celsius to Fahrenheit, where T is the temprature in Celsius):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+(T . 9/5) + 32 
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Rubric 
+Total Mark: 10 pts
+- 1st View: "About me"  (1 pt)
+- 2nd View: "My Town" (2 pts)
+- Navigation (2 pts)
+- Current Weather: Populating the data correctly (3 pts)
+- Current Weather: Conditional rendering the weather image (2 pts)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Bonus (+1 pt)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Design Inspiration
+![screenshot 1](screenshot-1.png)
+![screenshot 2](screenshot-2.png)
+![screenshot 3](screenshot-3.png)
+![screenshot 4](screenshot-4.png)
