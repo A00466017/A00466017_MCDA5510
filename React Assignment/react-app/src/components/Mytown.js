@@ -36,7 +36,7 @@ class Mytown extends Component {
     {
         fetch("https://api.openweathermap.org/data/2.5/weather?lat=44.651070&lon=-63.582687&appid=047a4bc27a0c9acf3eb9c1d8844f6c26")
         .then(res => res.json())
-        .then(data => this.setState({temp: ((data.main.temp))
+        .then(data => this.setState({temp: Math.round(((data.main.temp-273.15)))
         }));
     }
 
@@ -47,12 +47,13 @@ class Mytown extends Component {
           <h1>I live in Halifax, Nova Scotia</h1>
            <p>Halifax is the capital and largest municipality of the Canadian province of Nova Scotia, and the largest municipality in Atlantic Canada. 
            Halifax is a major economic centre in Atlantic Canada, with a large concentration of government services and private sector companies.</p>
-           <img src={this.state.random<10? imagesource1:(this.state.random<20?imagesource:imagesource2)} width={125} alt = {"weather"}/>
-           <p>{this.state.isshowCel === true? this.state.random:((this.state.random*1.8)+32)}°{this.state.isshowCel === true?this.state.tempunit:'F'}</p>
-           
+           {/* <img src={this.state.random<10? imagesource1:(this.state.random<20?imagesource:imagesource2)} width={125} alt = {"weather"}/> */}
+           <img src={this.state.temp<10? imagesource1:(this.state.temp<20?imagesource:imagesource2)} width={125} alt = {"weather"}/>
+           {/* <p>{this.state.isshowCel === true? this.state.random:((this.state.random*1.8)+32)}°{this.state.isshowCel === true?this.state.tempunit:'F'}</p> */}
+           <p>{this.state.isshowCel === true? this.state.temp:((this.state.temp*1.8)+32)}°{this.state.isshowCel === true?this.state.tempunit:'F'}</p>
            <button
                     onClick={() => this.setState({ isshowCel: !this.state.isshowCel })}
-                    className="btn-capital-show"                >
+                    className="btn-capital-show">
                     {this.state.isshowCel ? "Change to Fahrenheit" : "Change to Celsius"}
                 </button>
           </div>
