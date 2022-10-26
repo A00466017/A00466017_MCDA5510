@@ -1,12 +1,7 @@
 import React, { Component } from "react"
 import image from './My pic.jpeg'
 class Aboutme extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isShowCapital: false
-        }
-    }
+
 
     render() {
         return (
