@@ -26,8 +26,7 @@ class App extends Component {
         </div>
 
         {this.state.selectedMenu === 'p' ?
-          <Aboutme />
-          
+          <Aboutme />          
           :
           <Mytown />
         }
